@@ -13,7 +13,7 @@ public class AutoCountTools(AutoCountDb db)
         "Returns database names (AED_xxx format). Use the name as 'company' in other tools.")]
     public async Task<string> ListCompanies()
     {
-        var table = await db.QueryAsync(
+        var table = await db.WithDatabase("master").QueryAsync(
             "SELECT name AS Database, create_date AS Created FROM sys.databases " +
             "WHERE name LIKE 'AED[_]%' ORDER BY name",
             null);
