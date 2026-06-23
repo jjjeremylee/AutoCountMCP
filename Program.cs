@@ -9,8 +9,8 @@ builder.Services.AddSingleton<AutoCountDb>(sp =>
 {
     var cfg = builder.Configuration;
     return new AutoCountDb(
-        cfg["AutoCount:SqlInstance"] ?? ".\\A2025",
-        cfg["AutoCount:DefaultDatabase"] ?? "AED_TEST",
+        cfg["AutoCount:SqlInstance"] ?? throw new InvalidOperationException("AutoCount:SqlInstance not set in appsettings.json"),
+        cfg["AutoCount:DefaultDatabase"] ?? "master",
         bool.Parse(cfg["AutoCount:IntegratedSecurity"] ?? "true"),
         cfg["AutoCount:UserId"] ?? "",
         cfg["AutoCount:Password"] ?? "",
