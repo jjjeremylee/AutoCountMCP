@@ -28,6 +28,20 @@ Write-Host "  AutoCount MCP Plugin Installer    " -ForegroundColor Cyan
 Write-Host "====================================" -ForegroundColor Cyan
 Write-Host ""
 
+# ── 0. Check .NET 8 runtime ──────────────────────────────────────────────────
+Write-Host "Checking .NET 8 runtime..." -ForegroundColor Yellow
+$dotnetOk = dotnet --list-runtimes 2>$null | Select-String "Microsoft.NETCore.App 8\."
+if (-not $dotnetOk) {
+    Write-Host ".NET 8 runtime not found. Downloading installer..." -ForegroundColor Yellow
+    $dotnetInstaller = "$env:TEMP\dotnet-install.ps1"
+    Invoke-WebRequest "https://dot.net/v1/dotnet-install.ps1" -OutFile $dotnetInstaller -UseBasicParsing
+    & $dotnetInstaller -Runtime dotnet -Channel 8.0 -InstallDir "$env:ProgramFiles\dotnet"
+    $env:PATH = "$env:ProgramFiles\dotnet;" + $env:PATH
+    Write-Host ".NET 8 installed." -ForegroundColor Green
+} else {
+    Write-Host ".NET 8 found." -ForegroundColor Green
+}
+
 # ── 1. Download latest release ────────────────────────────────────────────────
 Write-Host "Checking latest release on GitHub..." -ForegroundColor Yellow
 
