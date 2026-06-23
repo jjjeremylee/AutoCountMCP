@@ -24,7 +24,7 @@ function Pause-Exit($code = 0) {
 Clear-Host
 Write-Host ""
 Write-Host "====================================" -ForegroundColor Cyan
-Write-Host "  AutoCount MCP Plugin Installer    " -ForegroundColor Cyan
+Write-Host "   DAXONET — AutoCount MCP Setup    " -ForegroundColor Cyan
 Write-Host "====================================" -ForegroundColor Cyan
 Write-Host ""
 
@@ -201,7 +201,7 @@ Write-Host "Registered in Claude Desktop." -ForegroundColor Green
 # ── Done ──────────────────────────────────────────────────────────────────────
 Write-Host ""
 Write-Host "============================================" -ForegroundColor Green
-Write-Host "  AutoCount MCP installed! ($version)" -ForegroundColor Green
+Write-Host "  DAXONET MCP installed! ($version)  " -ForegroundColor Green
 Write-Host "============================================" -ForegroundColor Green
 Write-Host ""
 Write-Host "NEXT: Restart Claude Desktop" -ForegroundColor Cyan
