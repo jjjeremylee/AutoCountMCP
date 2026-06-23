@@ -8,7 +8,7 @@ param(
     [Parameter(Mandatory)]
     [string]$SourceDir,
     [string]$BaseOutputDir  = "C:\",
-    [string]$SourceRepoUrl  = "https://github.com/lvmtx/AutoCountSource.git",
+    [string]$SourceRepoUrl  = "https://github.com/jjjeremylee/AutoCountSource.git",
     [string]$DecompileScript = ".\decompile_with_version.ps1"
 )
 

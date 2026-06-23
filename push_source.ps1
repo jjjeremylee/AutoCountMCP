@@ -10,7 +10,7 @@
 param(
     [string]$ExtractBaseDir = "C:\",
     [string]$GitRepoDir     = "C:\AutoCountSource",
-    [string]$RemoteUrl      = "https://github.com/lvmtx/AutoCountSource.git",
+    [string]$RemoteUrl      = "https://github.com/jjjeremylee/AutoCountSource.git",
     [switch]$DryRun
 )
 

@@ -8,7 +8,7 @@ param(
     [string]$Password    = ""
 )
 
-$repo      = "lvmtx/AutoCountMCP"
+$repo      = "jjjeremylee/AutoCountMCP"
 $installDir = "C:\AutoCountMCP"
 $exePath   = "$installDir\AutoCountMCP.exe"
 $cfgPath   = "$installDir\appsettings.json"
